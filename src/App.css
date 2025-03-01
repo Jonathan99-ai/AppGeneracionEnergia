@@ -1,0 +1,24 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.chart-container {
+  display: flex;
+  justify-content: center;
+}
+
+.summary-cards-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.filters-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  gap: 40px;
+}
