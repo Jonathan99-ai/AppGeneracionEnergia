@@ -14,7 +14,7 @@ export const RenderLineChart = ({ energyByCategoryArray }) => {
       <XAxis dataKey='date' />
       <YAxis
         label={{
-          value: 'Generación [GWh]',
+          // value: 'Generación [GWh]',
           angle: -90,
           position: 'center',
           offset: 20,

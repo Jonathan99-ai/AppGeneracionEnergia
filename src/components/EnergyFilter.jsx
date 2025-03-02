@@ -24,6 +24,7 @@ function EnergyFilter({ onSelectCategories, initSelectedCategories }) {
         {energyCategories.map((category) => (
           <label key={category}>
             <input
+             className='m-4 p-2'
               type='checkbox'
               value={category}
               checked={selectedCategories.includes(category)}

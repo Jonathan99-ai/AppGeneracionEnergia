@@ -1,24 +1,76 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
-.chart-container {
-  display: flex;
-  justify-content: center;
-}
-
+/* Add styles for the summary cards */
 .summary-cards-container {
   display: flex;
-  justify-content: center;
-  gap: 20px;
+  justify-content: space-around;
+  margin-top: 20px;
 }
 
-.filters-container {
-  display: flex;
-  justify-content: center;
-  padding: 20px;
-  gap: 40px;
+.summary-cards-container .card {
+  width: 30%;
+}
+
+.summary-cards-container .card-title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.summary-cards-container .card-text {
+  font-size: 1.2rem;
+}
+
+/* Add styles for the navigation header */
+.navbar {
+  margin-bottom: 20px;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.nav-link {
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+.nav-link:hover {
+  color: #ddd;
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+/* Add styles for the buttons */
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+/* Add styles for the cards */
+.card {
+  border-radius: 10px;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.card-text {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+/* Add styles for the footer */
+footer {
+  background-color: #f8f9fa;
+  padding: 20px 0;
+  color: #333;
 }
