@@ -1,8 +1,8 @@
-// const XM_API_ENDPOINT_LISTS = 'https://servapibi.xm.com.co/lists'
-// const XM_API_ENDPOINT_HOURLY = 'POST: https://servapibi.xm.com.co/hourly'
+const XM_API_ENDPOINT_LISTS = 'https://servapibi.xm.com.co/lists'
+const XM_API_ENDPOINT_HOURLY = 'POST: https://servapibi.xm.com.co/hourly'
 
-const XM_API_ENDPOINT_LISTS = '/api/lists'
-const XM_API_ENDPOINT_HOURLY = '/api/hourly'
+//const XM_API_ENDPOINT_LISTS = '/api/lists'
+//const XM_API_ENDPOINT_HOURLY = '/api/hourly'
 
 const requestDataResource = {
   MetricId: 'ListadoRecursos'
