@@ -2,7 +2,7 @@ import React from 'react';
   import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
   const RenderBarChart = ({ energyByCategoryArray }) => {
-    console.log(energyByCategoryArray); // Debugging line to check the data
+    // console.log(energyByCategoryArray); // Debugging line to check the data
 
     return (
       <ResponsiveContainer width="100%" height={300}>

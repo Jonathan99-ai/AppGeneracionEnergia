@@ -1,6 +1,8 @@
 import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts'
 
 export const RenderLineChart = ({ energyByCategoryArray }) => {
+  console.log(energyByCategoryArray);
+  
   if (!energyByCategoryArray) return
 
   const resourceKeys = energyByCategoryArray.length > 0

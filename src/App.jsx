@@ -7,7 +7,10 @@ import { useEnergyData } from './hooks/useGeneratedEnergy';
 import EnergyFilter from './components/EnergyFilter.jsx';
 import RenderBarChart from './components/RenderBarChart.jsx';
 import RenderBarChartRenewable from './components/RenderBarcharRenewable.jsx';
+import RenderPieChartRenewable from './components/RenderPieChartRenewable.jsx';
+import RenderPieChartOtherSources from './components/RenderPieChartOtherSources.jsx';
 import NavigationHeader from './components/shared/navigationHeader.jsx';
+
 
 function App() {
   const { user, isAuthenticated } = useAuth0();
@@ -137,6 +140,23 @@ function App() {
                 <p className="card-text">
                   La energía no renovable proviene de fuentes que se agotan con el tiempo, como el petróleo, el gas natural, el carbón y la energía nuclear. Estas fuentes de energía son limitadas y su uso tiene un impacto ambiental significativo, incluyendo la emisión de gases de efecto invernadero y otros contaminantes.
                 </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="row mt-4">
+          <div className="col-md-6 mb-4">
+            <div className="card shadow-lg">
+              <div className="card-body">
+                <RenderPieChartRenewable energyByCategoryArray={primaryEnergyArray} />
+              </div>
+            </div>
+          </div>
+          <div className="col-md-6 mb-4">
+            <div className="card shadow-lg">
+              <div className="card-body">
+                <RenderPieChartOtherSources energyByCategoryArray={otherEnergyArray} />
               </div>
             </div>
           </div>

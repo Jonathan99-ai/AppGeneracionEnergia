@@ -2,9 +2,8 @@ import React from 'react';
   import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
   const RenderBarChartRenewable = ({ energyByCategoryArray }) => {
-    console.log(energyByCategoryArray); // Debugging line to check the data
 
-    return (
+      return (
       <ResponsiveContainer width="100%" height={300}>
         <BarChart
           data={energyByCategoryArray}
