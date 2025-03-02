@@ -11,7 +11,6 @@ import RenderPieChartRenewable from './components/RenderPieChartRenewable.jsx';
 import RenderPieChartOtherSources from './components/RenderPieChartOtherSources.jsx';
 import NavigationHeader from './components/shared/navigationHeader.jsx';
 
-
 function App() {
   const { user, isAuthenticated } = useAuth0();
   const [startDate, setStartDate] = useState('2024-01-01');
@@ -33,6 +32,10 @@ function App() {
   };
 
   const handleDateChange = (setter) => (e) => {
+    if (!isAuthenticated) {
+      setShowModal(true);
+      return;
+    }
     const newDate = e.target.value;
     setter(newDate);
     setErrorMessage(validateDateRange(startDate, endDate) ? '' : 'El rango de fechas no puede ser mayor a 30 días.');
@@ -67,11 +70,11 @@ function App() {
             <div className="row mb-4 d-flex justify-content-center">
               <div className="col-md-3 mb-3">
                 <label htmlFor="start-date" className="form-label">Fecha Inicio:</label>
-                <input type="date" className="form-control" value={startDate} onChange={handleDateChange(setStartDate)} />
+                <input type="date" className="form-control" value={startDate} onChange={handleDateChange(setStartDate)} disabled={!isAuthenticated} />
               </div>
               <div className="col-md-3 mb-3">
                 <label htmlFor="end-date" className="form-label">Fecha Fin:</label>
-                <input type="date" className="form-control" value={endDate} onChange={handleDateChange(setEndDate)} />
+                <input type="date" className="form-control" value={endDate} onChange={handleDateChange(setEndDate)} disabled={!isAuthenticated} />
               </div>
               <div className="col-12 text-center mt-4">
                 <button className="btn btn-primary" onClick={handleFilterClick}>Filtrar</button>
