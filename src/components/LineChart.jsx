@@ -1,7 +1,6 @@
 import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts'
 
 export const RenderLineChart = ({ energyByCategoryArray }) => {
-  console.log(energyByCategoryArray);
   
   if (!energyByCategoryArray) return
 
@@ -10,18 +9,20 @@ export const RenderLineChart = ({ energyByCategoryArray }) => {
     : []
 
   return (
-    // <ResponsiveContainer>
-    <LineChart width={1000} height={300} data={energyByCategoryArray}>
+    <ResponsiveContainer width="100%" height={300}>
+    <LineChart data={energyByCategoryArray} margin={{
+            top: 5, right: 30, left: 0, bottom: 5,
+          }}>
       <CartesianGrid strokeDasharray='3 3' />
       <XAxis dataKey='date' />
       <YAxis
-        label={{
-          // value: 'Generación [GWh]',
-          angle: -90,
-          position: 'center',
-          offset: 20,
-          style: { fill: '#6b7280' }
-        }}
+        // label={{
+        //   value: 'Generación [GWh]',
+        //   angle: -90,
+        //   position: 'center',
+        //   offset: 500,
+        //   style: { fill: '#6b7280' }
+        // }}
       />
       <Tooltip />
       <Legend />
@@ -37,7 +38,7 @@ export const RenderLineChart = ({ energyByCategoryArray }) => {
         ))
       }
     </LineChart>
-    // </ResponsiveContainer>
+    </ResponsiveContainer>
   )
 }
 
