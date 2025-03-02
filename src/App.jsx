@@ -22,7 +22,9 @@ function App() {
     startDate, endDate, selectedCategories
   });
   const [errorMessage, setErrorMessage] = useState('');
-  const [showModal, setShowModal] = useState(false);
+  const [showModal, setShowModal] = useState(true);
+
+  const closeModal = () => setShowModal(false);
 
   const handleSelectCategories = (categories) => setSelectedCategories(categories);
 
@@ -54,17 +56,16 @@ function App() {
     }
   };
 
-  const closeModal = () => setShowModal(false);
-
   return (
     <>
+    <div className='parent container d-flex justify-content-center align-items-center h-100'>
       <div className="container m-4">
         <NavigationHeader />
         <div className="card shadow-lg mb-4">
           <div className="card-body">
             <h1 className="card-title text-center mb-4">Generación Real del SIN</h1>
             <p className="card-text text-center mb-4">
-              Se presenta la evolución de la generación real del Sistema Interconectado Nacional (SIN) por tipo de fuente y tipo de despacho. Además, el seguimiento a la participación de la generación por planta y renovabilidad.
+              Se presenta la evolución de la generación real del Sistema Interconectado Nacional (SIN) por tipo de fuente.
             </p>
 
             <div className="row mb-4 d-flex justify-content-center">
@@ -76,9 +77,9 @@ function App() {
                 <label htmlFor="end-date" className="form-label">Fecha Fin:</label>
                 <input type="date" className="form-control" value={endDate} onChange={handleDateChange(setEndDate)} disabled={!isAuthenticated} />
               </div>
-              <div className="col-12 text-center mt-4">
+              {/* <div className="col-12 text-center mt-4">
                 <button className="btn btn-primary" onClick={handleFilterClick}>Filtrar</button>
-              </div>
+              </div> */}
             </div>
 
             {errorMessage && <p className="text-danger text-center mt-3">{errorMessage}</p>}
@@ -92,6 +93,13 @@ function App() {
         </div>
 
         <div className="row mt-4">
+          <div className="col-md-12 mb-4">
+            <div className="card shadow-lg">
+              <div className="card-body text-center">
+                <h3>Generacion en GWh</h3>
+              </div>
+            </div>
+          </div>
           <div className="col-md-12 mb-4">
             <div className="card shadow-lg">
               <div className="card-body">
@@ -235,7 +243,7 @@ function App() {
         </div>
 
 
-        {showModal && (
+        {(showModal && !isAuthenticated) && (
           <div className="modal show d-block" tabIndex="-1">
             <div className="modal-dialog">
               <div className="modal-content">
@@ -252,8 +260,9 @@ function App() {
         )}
 
         <footer className="text-center mt-5">
-          <p>&copy; 2025 Generación Real del SIN. Todos los derechos reservados.</p>
+          <p>&copy; 2025 Generación Real del SIN.</p>
         </footer>
+      </div>
       </div>
     </>
   );
