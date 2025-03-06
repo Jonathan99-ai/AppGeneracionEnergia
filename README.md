@@ -16,12 +16,12 @@ Proyecto final bootcamp Talento Tech
 
 3. Instala las dependencias:
    ```bash
-   yarn install
+   pnpm install
    ```
 
 4. Levanta el proyecto:
    ```bash
-   yarn run dev
+   pnpm run dev
    ```
 
 5. Abre tu navegador y navega a `http://localhost:5173/` para ver la aplicación en funcionamiento.
