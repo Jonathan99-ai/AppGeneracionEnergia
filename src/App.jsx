@@ -63,7 +63,7 @@ function App() {
         <NavigationHeader />
         <div className="card shadow-lg mb-4">
           <div className="card-body">
-            <h1 className="card-title text-center mb-4">Generación Real del SIN</h1>
+            <h1 className="card-title text-center mb-4">Generación Energetica Colombia</h1>
             <p className="card-text text-center mb-4">
               Se presenta la evolución de la generación real del Sistema Interconectado Nacional (SIN) por tipo de fuente.
             </p>
